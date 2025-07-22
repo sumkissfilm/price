@@ -1,0 +1,826 @@
+/* ========================================
+   SUMMER KISSES - HEADER & NAVIGATION STYLES
+   ========================================
+   
+   這個檔案包含網站頁首和導航列的所有樣式設定
+   
+   主要功能：
+   - 固定式頁首，滾動時背景變為半透明白色
+   - 響應式設計：桌面版、平板版、手機版
+   - 漢堡選單動畫效果
+   - 社群媒體圖示
+   
+   使用方式：
+   1. 在 HTML 中引入此 CSS 檔案
+   2. 確保 HTML 結構符合以下類別命名
+   3. 需要配合 js/scroll.js 實現滾動效果
+   
+   HTML 結構範例：
+   <header class="navbar">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#">
+         <img src="logo.png" alt="Logo">
+       </a>
+       <button class="navbar-toggler" type="button">
+         <span>MENU</span>
+         <span class="icon-bar"></span>
+       </button>
+       <div class="navbar-collapse">
+         <button class="menu-close-btn">
+           <span class="close-icon">×</span>
+         </button>
+         <ul class="navbar-nav">
+           <li class="nav-item"><a class="nav-link" href="#">首頁</a></li>
+           <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+           <li class="nav-item"><a class="nav-link" href="#">服務項目</a></li>
+           <li class="nav-item"><a class="nav-link" href="#">聯絡我們</a></li>
+         </ul>
+         <div class="social-icons">
+           <a href="#"><i class="fab fa-facebook"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+         </div>
+       </div>
+     </div>
+   </header>
+*/
+
+/* ========================================
+   FONT AWESOME ICON FORCE DISPLAY - Font Awesome 圖示強制顯示
+   ======================================== */
+
+/* 強制顯示所有 Font Awesome 圖示 - 確保圖示能夠正確顯示 */
+.social-icons a i,
+.social-icons a .fab,
+.social-icons a .fas,
+.social-icons a .far,
+.navbar-collapse .social-icons a i,
+.navbar-collapse .social-icons a .fab,
+.navbar-collapse .social-icons a .fas,
+.navbar-collapse .social-icons a .far {
+    display: inline-block !important;       /* 強制顯示為行內區塊 */
+    font-style: normal !important;          /* 正常字體樣式 */
+    font-variant: normal !important;        /* 正常字體變體 */
+    text-rendering: auto !important;        /* 文字渲染設定 */
+    -webkit-font-smoothing: antialiased !important; /* Webkit 字體平滑 */
+    -moz-osx-font-smoothing: grayscale !important; /* Firefox 字體平滑 */
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands" !important; /* 字體設定 */
+    font-weight: 900 !important;            /* 字體粗細 */
+    line-height: 1 !important;              /* 行高為 1 */
+    opacity: 1 !important;                  /* 確保不透明 */
+    visibility: visible !important;         /* 確保可見 */
+}
+
+/* 品牌圖示特定字重設定 */
+.social-icons a .fab,
+.navbar-collapse .social-icons a .fab {
+    font-weight: 400 !important;            /* 品牌圖示使用較細的字重 */
+}
+
+/* ========================================
+   HEADER CONTAINER - 頁首容器
+   ======================================== */
+
+/* 主要頁首容器 - 固定定位在頁面頂部 */
+header {
+    position: fixed;          /* 固定定位，不隨滾動移動 */
+    top: 0;                   /* 貼齊頁面頂部 */
+    left: 0;                  /* 貼齊頁面左側 */
+    right: 0;                 /* 貼齊頁面右側 */
+    z-index: 1000;            /* 確保在其他元素之上 */
+    transition: all 0.3s ease; /* 所有屬性變化都有平滑過渡效果 */
+    background: transparent;   /* 預設背景透明 */
+}
+
+/* 滾動時的頁首樣式 - 由 JavaScript 動態添加 .scrolled 類別 */
+header.scrolled,
+header.scrolled.navbar,
+header.scrolled .navbar {
+    background: rgba(255, 255, 255, 0.95) !important; /* 半透明白色背景 */
+    backdrop-filter: blur(10px);                       /* 背景模糊效果 */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);        /* 陰影效果 */
+}
+
+/* ========================================
+   NAVBAR CONTAINER - 導航列容器
+   ======================================== */
+
+/* 導航列主要容器 */
+.navbar {
+    padding: 1.2rem 0;        /* 上下內距 1.2rem，左右無內距 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+    background: transparent;   /* 預設背景透明 */
+}
+
+/* 當頁首有 scrolled 類別時，導航列也應該有背景 */
+header.scrolled .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 導航列內容容器 - 使用 flexbox 布局 */
+.navbar .container-fluid {
+    display: flex;            /* 使用 flexbox 布局 */
+    align-items: center;      /* 垂直置中對齊 */
+    justify-content: space-between; /* 水平分散對齊 */
+    max-width: 1400px;        /* 最大寬度限制 */
+    margin: 0 auto;           /* 水平置中 */
+    padding: 0;               /* 無內距 */
+    position: relative;       /* 相對定位，作為子元素的定位參考 */
+}
+
+/* ========================================
+   BRAND LOGO - 品牌標誌
+   ======================================== */
+
+/* 品牌標誌容器 */
+.navbar-brand {
+    position: relative;       /* 相對定位 */
+    width: 300px;            /* 固定寬度 */
+    height: 50px;            /* 固定高度 */
+    display: flex;           /* 使用 flexbox 布局 */
+    align-items: center;     /* 垂直置中 */
+    text-decoration: none;   /* 移除連結底線 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+    z-index: 1001;           /* 確保在漢堡選單之上 */
+    flex-shrink: 0;          /* 防止在 flex 容器中被壓縮 */
+    margin-left: 50px;       /* 左側邊距 */
+}
+
+/* 品牌標誌圖片 */
+.navbar-brand img {
+    height: 40px;            /* 圖片高度 */
+    width: auto;             /* 寬度自動調整保持比例 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* 滾動時品牌標誌保持正常顯示 */
+header.scrolled .navbar-brand img {
+    filter: none;            /* 移除任何濾鏡效果 */
+}
+
+/* 品牌標誌懸停效果 */
+.navbar-brand:hover {
+    transform: scale(1.05);  /* 懸停時放大 5% */
+}
+
+.navbar-brand:hover img {
+    filter: brightness(1.1); /* 懸停時增加亮度 */
+}
+
+/* ========================================
+   HAMBURGER MENU BUTTON - 漢堡選單按鈕
+   ======================================== */
+
+/* 漢堡選單按鈕容器 */
+.navbar-toggler {
+    position: relative;       /* 相對定位 */
+    width: 40px;             /* 按鈕寬度 */
+    height: 40px;            /* 按鈕高度 */
+    border: none;            /* 移除邊框 */
+    background: transparent; /* 透明背景 */
+    cursor: pointer;         /* 滑鼠指標變為手型 */
+    display: flex;           /* 使用 flexbox 布局 */
+    align-items: center;     /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    z-index: 1001;           /* 確保在選單之上 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* 漢堡選單按鈕文字 */
+.navbar-toggler span {
+    font-family: "Noto Sans TC", sans-serif; /* 字體設定 */
+    font-size: 10px;         /* 字體大小 */
+    font-weight: 500;        /* 字體粗細 */
+    color: #333;             /* 文字顏色 */
+    margin-bottom: 8px;      /* 下方邊距 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* 漢堡按鈕的三條線 - 使用偽元素和子元素 */
+.navbar-toggler::before,
+.navbar-toggler::after,
+.navbar-toggler .icon-bar {
+    content: '';             /* 偽元素內容 */
+    display: block;          /* 區塊顯示 */
+    width: 24px;             /* 線條寬度 */
+    height: 2px;             /* 線條高度 */
+    background-color: #000;  /* 線條顏色 */
+    position: absolute;      /* 絕對定位 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+    left: 0;                 /* 左側對齊 */
+}
+
+/* 滾動時漢堡按鈕線條保持黑色 */
+header.scrolled .navbar-toggler::before,
+header.scrolled .navbar-toggler::after,
+header.scrolled .navbar-toggler .icon-bar {
+    background-color: #000;
+}
+
+/* 上方線條位置 */
+.navbar-toggler::before {
+    top: calc(50% - 8px);    /* 從中心向上偏移 8px */
+}
+
+/* 下方線條位置 */
+.navbar-toggler::after {
+    bottom: calc(50% - 8px); /* 從中心向下偏移 8px */
+}
+
+/* 中間線條位置 */
+.navbar-toggler .icon-bar {
+    top: 50%;                /* 垂直置中 */
+    transform: translateY(-50%); /* 精確垂直置中 */
+}
+
+/* ========================================
+   HAMBURGER ANIMATION - 漢堡選單動畫
+   ======================================== */
+
+/* 漢堡選單展開時的動畫效果 - 上方線條旋轉 */
+.navbar-toggler:not(.collapsed)::before {
+    transform: rotate(45deg); /* 旋轉 45 度 */
+    top: 50%;                /* 移到中心位置 */
+}
+
+/* 漢堡選單展開時的動畫效果 - 下方線條旋轉 */
+.navbar-toggler:not(.collapsed)::after {
+    transform: rotate(-45deg); /* 旋轉 -45 度 */
+    bottom: calc(50% - 1px);  /* 微調位置避免重疊 */
+}
+
+/* 漢堡選單展開時的動畫效果 - 中間線條隱藏 */
+.navbar-toggler:not(.collapsed) .icon-bar {
+    opacity: 0;              /* 完全透明 */
+}
+
+/* ========================================
+   MOBILE MENU CONTAINER - 行動版選單容器
+   ======================================== */
+
+/* 行動版選單容器 - 固定定位在右側 */
+.navbar-collapse {
+    position: fixed;         /* 固定定位 */
+    top: 0;                  /* 貼齊頂部 */
+    right: 0;                /* 貼齊右側 */
+    background: #fff;        /* 白色背景 */
+    padding: 2rem;           /* 內距 */
+    border-radius: 0;        /* 無圓角 */
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1); /* 左側陰影 */
+    margin-top: 0;           /* 無上方邊距 */
+    width: 300px;            /* 固定寬度 */
+    z-index: 999;            /* 層級設定 */
+    height: 100vh;           /* 全螢幕高度 */
+    display: flex;           /* 使用 flexbox 布局 */
+    flex-direction: column;  /* 垂直排列 */
+    justify-content: flex-start; /* 從頂部開始排列 */
+    transform: translateX(100%); /* 初始狀態隱藏在右側 */
+    opacity: 0;              /* 初始狀態透明 */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* 平滑過渡效果 */
+    visibility: hidden;      /* 初始狀態隱藏 */
+    overflow-y: auto;        /* 內容過多時可滾動 */
+}
+
+/* 選單展開狀態 */
+.navbar-collapse.show {
+    transform: translateX(0); /* 滑入到可見位置 */
+    opacity: 1;              /* 完全不透明 */
+    visibility: visible;     /* 可見 */
+}
+
+/* 選單開啟時防止背景滾動 */
+body.menu-open {
+    overflow: hidden;        /* 隱藏滾動條 */
+    position: fixed;         /* 固定定位 */
+    width: 100%;            /* 全寬 */
+}
+
+/* ========================================
+   MENU CLOSE BUTTON - 選單關閉按鈕
+   ======================================== */
+
+/* 選單關閉按鈕容器 */
+.menu-close-btn {
+    position: absolute;      /* 絕對定位 */
+    top: 1rem;              /* 距離頂部 1rem */
+    right: 1rem;            /* 距離右側 1rem */
+    width: 40px;            /* 按鈕寬度 */
+    height: 40px;           /* 按鈕高度 */
+    border: none;           /* 移除邊框 */
+    background: transparent; /* 透明背景 */
+    cursor: pointer;        /* 滑鼠指標變為手型 */
+    display: flex;          /* 使用 flexbox 布局 */
+    align-items: center;    /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    z-index: 1000;          /* 層級設定 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* 關閉按鈕懸停效果 */
+.menu-close-btn:hover {
+    background: rgba(0, 0, 0, 0.1); /* 懸停時半透明背景 */
+    border-radius: 50%;     /* 圓形背景 */
+}
+
+/* 關閉圖示 */
+.close-icon {
+    font-size: 24px;        /* 圖示大小 */
+    font-weight: bold;      /* 粗體 */
+    color: #333;            /* 顏色 */
+    line-height: 1;         /* 行高 */
+}
+
+/* ========================================
+   NAVIGATION MENU - 導航選單
+   ======================================== */
+
+/* 導航選單容器 */
+.navbar-nav {
+    position: static;        /* 靜態定位 */
+    transform: none;         /* 無變形 */
+    gap: 0;                 /* 無間距 */
+    justify-content: flex-start; /* 從左側開始排列 */
+    margin: 0;              /* 無邊距 */
+    padding: 1.5rem 0;      /* 上下內距 */
+    opacity: 0;             /* 初始狀態透明 */
+    transform: translateX(20px); /* 初始狀態向右偏移 */
+    transition: all 0.3s ease 0.2s; /* 延遲 0.2s 的過渡效果 */
+    flex: 1;                /* 佔據剩餘空間 */
+}
+
+/* 選單展開時的導航樣式 */
+.navbar-collapse.show .navbar-nav {
+    opacity: 1;             /* 完全不透明 */
+    transform: translateX(0); /* 回到原位置 */
+}
+
+/* ========================================
+   NAVIGATION ITEMS - 導航項目
+   ======================================== */
+
+/* 導航項目容器 */
+.nav-item {
+    border-bottom: 1px solid #eee; /* 底部邊框 */
+    padding: 1rem 0;        /* 上下內距 */
+    opacity: 0;             /* 初始狀態透明 */
+    transform: translateX(20px); /* 初始狀態向右偏移 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* 選單展開時的項目樣式 */
+.navbar-collapse.show .nav-item {
+    opacity: 1;             /* 完全不透明 */
+    transform: translateX(0); /* 回到原位置 */
+}
+
+/* ========================================
+   NAVIGATION LINKS - 導航連結
+   ======================================== */
+
+/* 導航連結樣式 */
+.nav-link {
+    font-family: "Noto Sans TC", sans-serif; /* 字體設定 */
+    font-size: 13px;        /* 字體大小 */
+    font-weight: 400;       /* 字體粗細 */
+    color: #333;            /* 文字顏色 */
+    text-decoration: none;  /* 移除連結底線 */
+    transition: color 0.3s ease; /* 顏色過渡效果 */
+    display: block;         /* 區塊顯示 */
+    padding: 0.3rem 0;      /* 上下內距 */
+}
+
+/* 導航連結懸停效果 */
+.nav-link:hover {
+    color: #f7bc51;         /* 懸停時變為品牌色 */
+}
+
+/* ========================================
+   ANIMATION DELAYS - 動畫延遲
+   ======================================== */
+
+/* 選單項目動畫延遲 - 創造階梯式動畫效果 */
+.nav-item:nth-child(1) { transition-delay: 0.1s; }   /* 第一個項目延遲 0.1s */
+.nav-item:nth-child(2) { transition-delay: 0.15s; }  /* 第二個項目延遲 0.15s */
+.nav-item:nth-child(3) { transition-delay: 0.2s; }   /* 第三個項目延遲 0.2s */
+.nav-item:nth-child(4) { transition-delay: 0.25s; }  /* 第四個項目延遲 0.25s */
+.nav-item:nth-child(5) { transition-delay: 0.3s; }   /* 第五個項目延遲 0.3s */
+
+/* ========================================
+   SOCIAL ICONS - 社群媒體圖示
+   ======================================== */
+
+/* 社群媒體圖示容器 */
+.social-icons {
+    position: relative;      /* 相對定位 */
+    margin-top: auto;       /* 自動上方邊距，推到底部 */
+    justify-content: center; /* 水平置中 */
+    right: auto;            /* 重置右側定位 */
+    padding: 1rem 0;        /* 上下內距 */
+    border-top: 1px solid #eee; /* 頂部邊框 */
+    opacity: 1;             /* 完全不透明 */
+    transform: none;        /* 無變形 */
+    transition: all 0.3s ease 0.35s; /* 延遲 0.35s 的過渡效果 */
+    width: 100%;            /* 全寬 */
+    display: flex;          /* 使用 flexbox 布局 */
+    gap: 1rem;              /* 圖示間距 */
+}
+
+/* 選單展開時的社群圖示樣式 */
+.navbar-collapse.show .social-icons {
+    opacity: 1;             /* 完全不透明 */
+    transform: translateX(0); /* 回到原位置 */
+}
+
+/* 社群圖示連結樣式 */
+.social-icons a {
+    color: #333;            /* 圖示顏色 */
+    font-size: 1.2rem;      /* 圖示大小 */
+    transition: color 0.3s ease; /* 顏色過渡效果 */
+    text-decoration: none;  /* 移除連結底線 */
+    display: flex;          /* 使用 flexbox 布局 */
+    align-items: center;    /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    width: 30px;            /* 連結寬度 */
+    height: 30px;           /* 連結高度 */
+    border-radius: 50%;     /* 圓形背景 */
+    background: rgba(247, 188, 81, 0.1); /* 半透明品牌色背景 */
+}
+
+/* 社群圖示懸停效果 */
+.social-icons a:hover {
+    color: #f7bc51;         /* 懸停時變為品牌色 */
+    background: rgba(247, 188, 81, 0.2); /* 懸停時背景更明顯 */
+    transform: scale(1.1);  /* 懸停時放大 10% */
+}
+
+/* 無障礙功能 - 焦點樣式 */
+.social-icons a:focus {
+    outline: 2px solid #f7bc51; /* 焦點時的品牌色外框 */
+    outline-offset: 2px;    /* 外框偏移 */
+}
+
+/* ========================================
+   FONT AWESOME ICON DISPLAY - Font Awesome 圖示顯示
+   ======================================== */
+
+/* Font Awesome 圖示顯示設定 - 通用樣式 */
+.social-icons a i,
+.social-icons a .fab,
+.social-icons a .fas,
+.social-icons a .far {
+    display: flex !important;           /* 強制使用 flexbox 布局 */
+    align-items: center !important;     /* 垂直置中 */
+    justify-content: center !important; /* 水平置中 */
+    width: 100% !important;             /* 全寬 */
+    height: 100% !important;            /* 全高 */
+    font-style: normal !important;      /* 正常字體樣式 */
+    line-height: 1 !important;          /* 行高為 1 */
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands" !important; /* 字體設定 */
+    font-weight: 900 !important;        /* 字體粗細 */
+    text-rendering: auto !important;    /* 文字渲染設定 */
+    -webkit-font-smoothing: antialiased !important; /* Webkit 字體平滑 */
+    -moz-osx-font-smoothing: grayscale !important; /* Firefox 字體平滑 */
+}
+
+/* 品牌圖示特定字重設定 */
+.social-icons a .fab {
+    font-weight: 400 !important; /* 品牌圖示使用較細的字重 */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - 響應式設計
+   ======================================== */
+
+/* ===== DESKTOP STYLES (≥992px) - 桌面版樣式 ===== */
+@media (min-width: 992px) {
+    /* 桌面版品牌標誌調整 */
+    .navbar-brand {
+        position: relative;       /* 相對定位 */
+        width: 300px;            /* 固定寬度 */
+        height: 50px;            /* 固定高度 */
+        margin-left: 50px;       /* 左側邊距 */
+        display: flex;           /* 使用 flexbox 布局 */
+        align-items: center;     /* 垂直置中 */
+        text-decoration: none;   /* 移除連結底線 */
+        transition: all 0.3s ease; /* 平滑過渡效果 */
+        z-index: 1001;           /* 確保在漢堡選單之上 */
+        flex-shrink: 0;          /* 防止在 flex 容器中被壓縮 */
+    }
+    
+    /* 桌面版品牌標誌圖片調整 */
+    .navbar-brand img {
+        height: 40px;            /* 圖片高度 */
+        width: auto;             /* 寬度自動調整保持比例 */
+        transition: all 0.3s ease; /* 平滑過渡效果 */
+    }
+    
+    /* 桌面版選單容器 - 改為靜態定位 */
+    .navbar-collapse {
+        position: static;    /* 靜態定位 */
+        background: transparent; /* 透明背景 */
+        padding: 0;          /* 無內距 */
+        box-shadow: none;    /* 無陰影 */
+        width: auto;         /* 自動寬度 */
+        height: auto;        /* 自動高度 */
+        transform: none;     /* 無變形 */
+        opacity: 1;          /* 完全不透明 */
+        visibility: visible; /* 可見 */
+        overflow: visible;   /* 內容可見 */
+        display: flex;       /* 使用 flexbox 布局 */
+        flex-direction: row; /* 水平排列 */
+        justify-content: space-between; /* 分散對齊 */
+        align-items: center; /* 垂直置中 */
+        flex: 1;            /* 佔據剩餘空間 */
+    }
+    
+    /* 桌面版導航選單 - 水平排列 */
+    .navbar-nav {
+        position: static;    /* 靜態定位 */
+        transform: none;     /* 無變形 */
+        opacity: 1;          /* 完全不透明 */
+        padding: 0;          /* 無內距 */
+        margin: 0;           /* 無邊距 */
+        display: flex;       /* 使用 flexbox 布局 */
+        flex-direction: row; /* 水平排列 */
+        gap: 2rem;           /* 項目間距 */
+        align-items: center; /* 垂直置中 */
+        position: absolute;  /* 絕對定位 */
+        left: 50%;          /* 左側 50% */
+        transform: translateX(-50%); /* 水平置中 */
+    }
+    
+    /* 桌面版導航項目 - 移除邊框和內距 */
+    .nav-item {
+        border: none;        /* 移除邊框 */
+        padding: 0;          /* 無內距 */
+        opacity: 1;          /* 完全不透明 */
+        transform: none;     /* 無變形 */
+    }
+    
+    /* 桌面版導航連結 - 調整字體和內距 */
+    .nav-link {
+        font-size: 14px;     /* 字體大小 */
+        font-weight: 500;    /* 字體粗細 */
+        padding: 0.5rem 0;   /* 上下內距 */
+        position: relative;  /* 相對定位 */
+        white-space: nowrap; /* 防止文字換行 */
+    }
+    
+    .nav-link:hover {
+        color: #f7bc51;      /* 懸停時品牌色 */
+    }
+    
+    /* 桌面版社群圖示 - 調整位置和樣式 */
+    .navbar-collapse .social-icons,
+    .social-icons {
+        position: static !important;    /* 靜態定位 */
+        margin: 0 !important;           /* 無邊距 */
+        padding: 0 !important;          /* 無內距 */
+        border: none !important;        /* 移除邊框 */
+        opacity: 1 !important;          /* 完全不透明 */
+        transform: none !important;     /* 無變形 */
+        width: auto !important;         /* 自動寬度 */
+        transition: none !important;    /* 無過渡效果 */
+        display: flex !important;       /* 使用 flexbox 布局 */
+        gap: 1.5rem !important;         /* 圖示間距 */
+        margin-left: auto !important;   /* 自動左邊距，推到右側 */
+        margin-right: 50px !important;  /* 右側邊距 */
+        flex-shrink: 0 !important;      /* 防止被壓縮 */
+        visibility: visible !important; /* 確保可見 */
+    }
+    
+    /* 桌面版社群圖示連結 - 調整大小和樣式 */
+    .navbar-collapse .social-icons a,
+    .social-icons a {
+        color: #000 !important;         /* 圖示顏色 */
+        font-size: 1.25rem !important;  /* 圖示大小 - 與內聯樣式保持一致 */
+        transition: color 0.3s ease !important; /* 顏色過渡效果 */
+        width: 20px !important;         /* 連結寬度 */
+        height: 20px !important;        /* 連結高度 */
+        display: flex !important;       /* 使用 flexbox 布局 */
+        align-items: center !important; /* 垂直置中 */
+        justify-content: center !important; /* 水平置中 */
+        text-decoration: none !important; /* 移除連結底線 */
+        background: rgba(247, 188, 81, 0.1) !important; /* 半透明背景 */
+        border-radius: 50% !important;  /* 圓形背景 */
+        opacity: 1 !important;          /* 確保不透明 */
+        visibility: visible !important; /* 確保可見 */
+    }
+    
+    /* 桌面版社群圖示懸停效果 */
+    .navbar-collapse .social-icons a:hover,
+    .social-icons a:hover {
+        color: #f7bc51 !important;      /* 懸停時品牌色 */
+        background: none !important;    /* 移除背景 */
+        transform: none !important;     /* 無變形 */
+    }
+    
+    /* 桌面版 Font Awesome 圖示顯示設定 */
+    .navbar-collapse .social-icons a i,
+    .navbar-collapse .social-icons a .fab,
+    .navbar-collapse .social-icons a .fas,
+    .navbar-collapse .social-icons a .far,
+    .social-icons a i,
+    .social-icons a .fab,
+    .social-icons a .fas,
+    .social-icons a .far {
+        display: inline-block !important;       /* 強制顯示為行內區塊 */
+        align-items: center !important;         /* 垂直置中 */
+        justify-content: center !important;     /* 水平置中 */
+        width: 100% !important;                 /* 全寬 */
+        height: 100% !important;                /* 全高 */
+        font-style: normal !important;          /* 正常字體樣式 */
+        line-height: 1 !important;              /* 行高為 1 */
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands" !important; /* 字體設定 */
+        font-weight: 900 !important;            /* 字體粗細 */
+        text-rendering: auto !important;        /* 文字渲染設定 */
+        -webkit-font-smoothing: antialiased !important; /* Webkit 字體平滑 */
+        -moz-osx-font-smoothing: grayscale !important; /* Firefox 字體平滑 */
+        opacity: 1 !important;                  /* 確保不透明 */
+        visibility: visible !important;         /* 確保可見 */
+        font-size: inherit !important;          /* 繼承父元素字體大小 */
+    }
+    
+    /* 桌面版品牌圖示特定字重設定 */
+    .navbar-collapse .social-icons a .fab,
+    .social-icons a .fab {
+        font-weight: 400 !important; /* 品牌圖示使用較細的字重 */
+    }
+    
+    /* 桌面版特定圖示樣式 */
+    .navbar-collapse .social-icons a .fa-youtube,
+    .social-icons a .fa-youtube {
+        font-family: "Font Awesome 6 Brands" !important;
+        font-weight: 400 !important;
+    }
+    
+    .navbar-collapse .social-icons a .fa-instagram,
+    .social-icons a .fa-instagram {
+        font-family: "Font Awesome 6 Brands" !important;
+        font-weight: 400 !important;
+    }
+    
+    .navbar-collapse .social-icons a .fa-home,
+    .social-icons a .fa-home {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important;
+    }
+    
+    /* 隱藏關閉按鈕 - 桌面版不需要 */
+    .menu-close-btn {
+        display: none;       /* 隱藏 */
+    }
+}
+
+/* ===== TABLET STYLES (≤991px) - 平板版樣式 ===== */
+@media (max-width: 991px) {
+    /* 平板版導航列調整 */
+    .navbar {
+        padding: 2rem 1rem;  /* 調整內距 */
+    }
+    
+    /* 平板版容器調整 */
+    .navbar .container-fluid {
+        padding: 0;          /* 無內距 */
+        justify-content: space-between; /* 分散對齊 */
+        position: relative;  /* 相對定位 */
+    }
+    
+    /* 平板版品牌標誌調整 */
+    .navbar-brand {
+        width: 200px;        /* 調整寬度 */
+        margin-left: 0;      /* 移除左邊距 */
+        position: absolute;  /* 絕對定位 */
+        left: 50%;          /* 左側 50% */
+        transform: translateX(-50%); /* 水平置中 */
+    }
+    
+    /* 平板版品牌標誌圖片調整 */
+    .navbar-brand img {
+        height: 35px;        /* 調整高度 */
+    }
+    
+    /* 平板版品牌標誌懸停效果修正 - 避免位置偏移 */
+    .navbar-brand:hover {
+        transform: translateX(-50%) scale(1.05); /* 保持置中並放大 */
+    }
+    
+    /* 平板版漢堡選單按鈕調整 */
+    .navbar-toggler {
+        position: absolute;  /* 絕對定位 */
+        right: 0;           /* 貼齊右側 */
+        margin-right: 0;    /* 移除右邊距 */
+        z-index: 1002;      /* 提高層級 */
+    }
+    
+    /* 平板版選單容器調整 */
+    .navbar-collapse {
+        width: 280px;        /* 調整寬度 */
+        padding: 1.5rem;     /* 調整內距 */
+    }
+}
+
+/* ===== MOBILE STYLES (≤576px) - 手機版樣式 ===== */
+@media (max-width: 576px) {
+    /* 手機版導航列調整 */
+    .navbar {
+        padding: 2rem 0;     /* 調整內距 */
+    }
+    
+    /* 手機版容器調整 */
+    .navbar .container-fluid {
+        padding: 0;          /* 無內距 */
+        justify-content: space-between; /* 分散對齊 */
+        position: relative;  /* 相對定位 */
+    }
+    
+    /* 手機版品牌標誌調整 */
+    .navbar-brand {
+        width: 180px;        /* 調整寬度 */
+        margin-left: 0;      /* 移除左邊距 */
+        position: absolute;  /* 絕對定位 */
+        left: 50%;          /* 左側 50% */
+        transform: translateX(-50%); /* 水平置中 */
+    }
+    
+    /* 手機版品牌標誌圖片調整 */
+    .navbar-brand img {
+        height: 30px;        /* 調整高度 */
+    }
+    
+    /* 手機版品牌標誌懸停效果修正 - 避免位置偏移 */
+    .navbar-brand:hover {
+        transform: translateX(-50%) scale(1.05); /* 保持置中並放大 */
+    }
+    
+    /* 手機版漢堡選單按鈕調整 */
+    .navbar-toggler {
+        position: absolute;  /* 絕對定位 */
+        right: 0;           /* 貼齊右側 */
+        margin-right: 0;    /* 移除右邊距 */
+        z-index: 1002;      /* 提高層級 */
+    }
+    
+    /* 手機版選單容器調整 */
+    .navbar-collapse {
+        width: 100%;         /* 全寬 */
+        padding: 1rem;       /* 調整內距 */
+    }
+    
+    /* 手機版導航連結調整 */
+    .nav-link {
+        font-size: 13px;     /* 調整字體大小 */
+        padding: 0.5rem 0;   /* 調整內距 */
+    }
+    
+    /* 手機版最後一個導航項目移除底部邊框 */
+    .nav-item:last-child .nav-link {
+        border-bottom: none; /* 移除底部邊框 */
+    }
+    
+    /* 手機版社群圖示調整 */
+    .social-icons {
+        gap: 0.8rem;         /* 調整間距 */
+        padding: 1.5rem 0;   /* 調整內距 */
+    }
+    
+    /* 手機版社群圖示連結調整 */
+    .social-icons a {
+        width: 20px;         /* 調整寬度 */
+        height: 20px;        /* 調整高度 */
+        font-size: 1.2rem;   /* 調整字體大小 */
+        background: rgba(247, 188, 81, 0.1); /* 半透明背景 */
+        border-radius: 50%;  /* 圓形背景 */
+    }
+    
+    /* 手機版關閉按鈕調整 */
+    .menu-close-btn {
+        display: flex;       /* 顯示關閉按鈕 */
+        position: absolute;  /* 絕對定位 */
+        top: 1rem;          /* 距離頂部 1rem */
+        right: 1rem;        /* 距離右側 1rem */
+        width: 40px;        /* 按鈕寬度 */
+        height: 40px;       /* 按鈕高度 */
+        border: none;       /* 移除邊框 */
+        background: rgba(0, 0, 0, 0.1); /* 半透明背景 */
+        border-radius: 50%; /* 圓形背景 */
+        cursor: pointer;    /* 滑鼠指標變為手型 */
+        align-items: center; /* 垂直置中 */
+        justify-content: center; /* 水平置中 */
+        z-index: 1003;      /* 確保在最上層 */
+        transition: all 0.3s ease; /* 平滑過渡效果 */
+    }
+    
+    .menu-close-btn:hover {
+        background: rgba(0, 0, 0, 0.2); /* 懸停時背景更明顯 */
+        transform: scale(1.1); /* 懸停時放大 */
+    }
+    
+    .menu-close-btn .close-icon {
+        font-size: 20px;    /* 調整圖示大小 */
+        font-weight: bold;  /* 粗體 */
+        color: #333;        /* 顏色 */
+        line-height: 1;     /* 行高 */
+    }
+
+} 

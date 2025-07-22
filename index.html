@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== PAGE TITLE & FAVICON ===== -->
+    <title>價格方案 | Summer Kisses</title>
+    <link rel="icon" href="images/favicon/SumKiss.png" type="image/png">
+    
+    <!-- ===== SEO META TAGS ===== -->
+    <meta name="description" content="Summer Kisses 一間專注於製作愛情故事的影像工作室，紀錄的不僅僅是你們，是情感，也是時間。">
+    <meta name="keywords" content="預告影片, 婚禮預告, 婚禮影片, 情侶寫真, 愛情故事, 個人寫真, 求婚紀錄, Summer Kisses">
+    <meta name="author" content="Summer Kisses">
+    
+    <!-- ===== EXTERNAL STYLESHEETS ===== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- ===== LOCAL STYLESHEETS ===== -->
+    <!-- 主要樣式檔案 - 包含全域樣式、各區塊樣式、響應式設計 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 頁首導航樣式檔案 - 包含 header、導航列、漢堡選單、選單動畫 -->
+    <link rel="stylesheet" href="css/header-navigation.css">
+    <!-- 社群媒體圖示樣式檔案 - 包含社群圖示樣式、響應式設計 -->
+    <link rel="stylesheet" href="css/social-icons.css">
+    <!-- Footer 樣式檔案 - 包含頁尾樣式、響應式設計、無障礙功能 -->
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css">
+    <!-- 愛情故事價格區塊樣式檔案 - 專門針對愛情故事價格區塊的樣式 -->
+    <link rel="stylesheet" href="css/pricing-love-story-simple.css">
+    <!-- YouTube 主題樣式檔案 - 包含 YouTube 嵌入影片樣式 -->
+    <!-- 注意：此檔案目前不存在，YouTube 樣式已整合到 style.css 中 -->
+</head>
+<body>
+   <!-- ===== HEADER & NAVIGATION ===== -->
+    <!--
+        Header 導覽列區塊
+        - 樣式主要由 css/header-navigation.css 控制
+        - 滾動超過 hero 區塊時，header 會自動加上 .scrolled 類別，顯示白色背景
+        - 相關 JS 控制於 js/scroll.js（負責滾動監聽與 class 切換）
+        - Bootstrap 負責響應式選單展開收合
+    -->
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <!--
+        Header 導覽列區塊
+        - 樣式主要由 css/header-navigation.css 控制
+        - 滾動超過 hero 區塊時，header 會自動加上 .scrolled 類別，顯示白色背景
+        - 相關 JS 控制於 js/scroll.js（負責滾動監聽與 class 切換）
+        - Bootstrap 負責響應式選單展開收合
+    -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <!-- Brand Logo -->
+                <a class="navbar-brand" href="https://sumkissfilm.github.io/homepage/">
+                    <img src="images/header/summerkiss-logo.png" alt="Summer Kisses Logo">
+                </a>
+                
+                <!-- Mobile Menu Toggle Button -->
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- 關閉按鈕 -->
+                    <button class="menu-close-btn" type="button" aria-label="關閉選單">
+                        <span class="close-icon"></span>
+                    </button>
+                    
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://sumkissfilm.github.io/aboutus/" style="white-space: nowrap;">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://sumkissfilm.github.io/price/" style="white-space: nowrap;">愛情故事</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Prewedding.html" style="white-space: nowrap;">價格方案</a>
+                        </li>
+                        <!-- Hidden Menu Item
+                        <li class="nav-item">
+                            <a class="nav-link" href="Customer.html" style="white-space: nowrap;">顧客回顧</a>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Column.html" style="white-space: nowrap;">常見Q&A</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Social Media Icons -->
+                    <!-- 社群媒體圖示區塊 - 使用 header-navigation.css 樣式 -->
+                    <div class="social-icons">
+                        <a href="http://www.youtube.com/@sumkiss" target="_blank" aria-label="YouTube" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; color: #000; text-decoration: none; background: rgba(247, 188, 81, 0.1); border-radius: 50%; transition: color 0.3s ease;">
+                            <i class="fab fa-youtube" style="display: inline-block !important; font-style: normal !important; font-family: 'Font Awesome 6 Brands' !important; font-weight: 400 !important; line-height: 1 !important; font-size: 1.25rem !important;"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sumkiss.film/" target="_blank" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; color: #000; text-decoration: none; background: rgba(247, 188, 81, 0.1); border-radius: 50%; transition: color 0.3s ease;">
+                            <i class="fab fa-instagram" style="display: inline-block !important; font-style: normal !important; font-family: 'Font Awesome 6 Brands' !important; font-weight: 400 !important; line-height: 1 !important; font-size: 1.25rem !important;"></i>
+                        </a>
+                        <a href="https://sumkissfilm.github.io/homepage/" aria-label="Home" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; color: #000; text-decoration: none; background: rgba(247, 188, 81, 0.1); border-radius: 50%; transition: color 0.3s ease;">
+                            <i class="fas fa-home" style="display: inline-block !important; font-style: normal !important; font-family: 'Font Awesome 6 Free' !important; font-weight: 900 !important; line-height: 1 !important; font-size: 1.25rem !important;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero position-relative">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 text-center">
+                        <div class="about-hero-content">
+                            <h1 class="display-4 fw-light text-white mb-4 animate-on-scroll">價格方案</h1>
+                            <p class="lead text-white animate-on-scroll"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Love Story Section -->
+        <section class="about-story py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title animate-on-scroll">愛情故事</h2>
+                    </div>
+                </div>
+                <div class="row align-items-start g-5">
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="story-image rounded-4 overflow-hidden shadow-lg animate-on-scroll">
+                                    <a href="https://www.instagram.com/reel/DGcoQzlTdSi/?igsh=MXZuOTdxeW04d3dmcA==" target="_blank" class="d-block position-relative">
+                                        <img src="images/hero/0623_10.png" alt="代表作品" class="img-fluid w-100" loading="lazy">
+                                        <div class="overlay">
+                                            <div class="overlay-content">
+                                                <span class="text-white">查看影片</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--<div class="col-12">
+                                <div class="story-image rounded-4 overflow-hidden shadow-lg animate-on-scroll">
+                                    <a href="https://www.instagram.com/reel/DGcoQzlTdSi/?igsh=MXZuOTdxeW04d3dmcA==" target="_blank" class="d-block position-relative">
+                                        <img src="images/hero/0623_14.png" alt="代表作品" class="img-fluid w-100" loading="lazy">
+                                        <div class="overlay">
+                                            <div class="overlay-content">
+                                                <span class="text-white">查看影片</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="story-text animate-on-scroll">
+                            <p class="text-muted mb-4">
+                                以柔和、日系膠片為風格，記錄每一段關係中最真摯、最浪漫的瞬間。
+                                無論是戀人間的親密時光、婚禮的溫柔細節，或是日常裡那些微小卻珍貴的眼神交換，
+                                Summer Kisses 都以細膩的鏡頭語言，呈現屬於每對戀人獨一無二的愛情故事。
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>愛情故事</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>情侶寫真</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>登記紀實</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>婚禮影片</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section - Love Story -->
+        <section class="pricing-section py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- 第一個價格卡片 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="pricing-card animate-on-scroll">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="card-title h5 mb-3">愛情故事<br><span class="badge bg-warning text-dark ms-2">
+                                        <i class="fas fa-star me-1"></i>推薦</span><span class="badge bg-danger text-white ms-2">
+                                        <i class="fas fa-users me-1"></i>限前20組</span></h3>
+                                    <div class="price mb-4">
+                                        <div class="original-price text-muted mb-1">
+                                            <span class="h5">原價 NT$ 34,800</span>
+                                        </div>
+                                        <div class="discounted-price">
+                                            <span class="h3 text-warning">NT$ 25,800</span>
+                                            <span class="text-muted">/ 天</span>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>拍攝時數約 6 小時</li>
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>拍攝地點 2-3 處（台中地區免車馬費）</li>
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>成品影片 1 支</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二個價格卡片 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="pricing-card animate-on-scroll">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="card-title h5 mb-3">登記記錄｜同日拍攝<br>
+                                        <span class="badge bg-warning text-dark ms-2"><i class="fas fa-star me-1"></i>加購項目</span>
+                                        <span class="badge bg-warning text-dark ms-2"><i class="fas fa-star me-1"></i>推薦</span>
+                                        </h3>
+                                    <div class="price mb-4">
+                                        <div class="original-price text-muted mb-1">
+                                            <span class="h5">原價 NT$ 10,000</span>
+                                        </div>
+                                        <div class="discounted-price">
+                                            <span class="h3 text-warning">NT$ 6,000</span>
+                                            <span class="text-muted">/ 加購</span>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>總拍攝時數約 6-8 小時</li>
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>增加戶政事務所登記拍攝</li>
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>此方案為加購服務，需搭配愛情故事方案一起選擇</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第三個價格卡片 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="pricing-card animate-on-scroll">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="card-title h5 mb-3">登記記錄｜不同日拍攝
+                                        <br><span class="badge bg-warning text-dark ms-2"><i class="fas fa-star me-1"></i>加購項目</span></h3>
+                                    <div class="price mb-4">
+                                        <div class="original-price text-muted mb-1">
+                                            <span class="h5">原價 NT$ 14,000</span>
+                                        </div>
+                                        <div class="discounted-price">
+                                            <span class="h3 text-warning">NT$ 12,000</span>
+                                            <span class="text-muted">/ 加購</span>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>當日拍攝時數約 1-2 小時</li>
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>戶政事務所登記拍攝</li>
+                                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>此方案為加購服務，需搭配愛情故事方案一起選擇</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="https://www.instagram.com/sumkiss.film/" target="_blank" class="btn btn-outline-warning">
+                            <i class="fas fa-calendar-alt me-2"></i>預約諮詢
+                        </a>
+                    </div>                </div>
+            </div>
+        </section>
+        
+        <!-- Commercial Section -->
+        <section class="about-story py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title animate-on-scroll">輕廣告｜動態寫真</h2>
+                    </div>
+                </div>
+                <div class="row align-items-start g-5">
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="story-image rounded-4 overflow-hidden shadow-lg animate-on-scroll">
+                                    <a href="https://youtu.be/b8WcgMShfuQ" target="_blank" class="d-block position-relative">
+                                        <img src="images/body002/maxresdefault.jpg" alt="代表作品" class="img-fluid w-100" loading="lazy">
+                                        <div class="overlay">
+                                            <div class="overlay-content">
+                                                <span class="text-white">查看影片</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="story-text animate-on-scroll">
+                            <p class="text-muted mb-4">
+                                不只是愛情，我們也看見你與世界之間的故事。<br>
+                                從戀人、婚禮到品牌、個人，用柔和的光影和細膩的心，拍下每一個值得被記住的瞬間。<br>
+                                Summer Kisses，為每一種關係、每一種角色，留下屬於你的溫度。
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>輕廣告</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>動態寫真</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>形象影片</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 商業形象廣告諮詢卡片 -->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="card border-0 shadow-lg animate-on-scroll">
+                            <div class="card-body p-5 text-center">
+                                <div class="mb-4">
+                                    <i class="fas fa-handshake fa-3x text-warning mb-3"></i>
+                                    <h3 class="h4 mb-3">商業拍攝合作</h3>
+                                    <p class="text-muted mb-4">
+                                        每個品牌都有獨特的故事和需求，我們提供客製化的商業形象廣告拍攝服務。<br>
+                                        請聯絡我們詳細討論您的需求，我們將為您提供最適合的報價方案。
+                                    </p>
+                                </div>
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-4">
+                                        <div class="text-center">
+                                            <h5 class="h6 mb-2">影像製作</h5>
+                                            <p class="text-muted small">輕廣告、動態寫真、產品攝影</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="text-center">
+                                            <h5 class="h6 mb-2">後期製作</h5>
+                                            <p class="text-muted small">調色、剪輯、特效</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="text-center">
+                                            <h5 class="h6 mb-2">網頁製作</h5>
+                                            <p class="text-muted small">網頁製作、UI設計</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <a href="https://www.instagram.com/sumkiss.film/" target="_blank" class="btn btn-outline-warning">
+                                        <i class="fas fa-calendar-alt me-2"></i>預約諮詢
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- transport cost Section -->
+        <section class="transport-cost-section py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title animate-on-scroll">車馬費說明</h2>
+                        <p class="text-muted mb-4">為了提供更好的服務品質，我們會根據拍攝地點收取適當的車馬費</p>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="transport-cost-card animate-on-scroll">
+                            <div class="card border-0 shadow-lg">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center mb-4">
+                                        <div class="col-md-2 text-center">
+                                            <i class="fas fa-car fa-3x text-warning mb-3"></i>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h3 class="h4 mb-3">車馬費計算方式</h3>
+                                            <p class="text-muted mb-0">
+                                                我們以台中市區為基準點，根據拍攝地點的距離計算車馬費。
+                                                車馬費包含油資、過路費及時間成本。
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th scope="col" class="text-center">拍攝地區</th>
+                                                    <th scope="col" class="text-center">車馬費</th>
+                                                    <th scope="col" class="text-center">備註</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center fw-bold">台中市區</td>
+                                                    <td class="text-center text-success fw-bold">免費</td>
+                                                    <td class="text-center text-muted"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center fw-bold">新竹、苗栗、彰化、南投</td>
+                                                    <td class="text-center text-dark fw-bold">NT$ 1,500</td>
+                                                    <td class="text-center text-muted"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center fw-bold">桃園、雲林、嘉義</td>
+                                                    <td class="text-center text-dark fw-bold">NT$ 2,500</td>
+                                                    <td class="text-center text-muted"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center fw-bold">台北、新北、台南</td>
+                                                    <td class="text-center text-dark fw-bold">NT$ 3,000</td>
+                                                    <td class="text-center text-muted"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center fw-bold">基隆、高雄</td>
+                                                    <td class="text-center text-dark fw-bold">NT$ 3,500</td>
+                                                    <td class="text-center text-muted"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center fw-bold">宜蘭、花蓮、台東、屏東</td>
+                                                    <td class="text-center text-dark fw-bold">另計</td>
+                                                    <td class="text-center text-muted">除車馬費外，需額外提供住宿費用</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="text-center mt-3">
+                                        <p class="text-muted small mb-0">
+                                            <i class="fas fa-info-circle me-1"></i>
+                                            市區為主，郊外地區請提出拍攝需求
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
+                                            <div class="alert alert-info border-0">
+                                                <h6 class="alert-heading mb-2">
+                                                    <i class="fas fa-info-circle me-2"></i>注意事項
+                                                </h6>
+                                                <ul class="mb-0 small">
+                                                    <li>外島、國外拍攝，歡迎諮詢</li>
+                                                    <li>如需多個拍攝地點，以最遠距離計算</li>
+                                                    <li>若加購不同日拍攝登記記錄，車馬費另行計算</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="alert alert-warning border-0">
+                                                <h6 class="alert-heading mb-2">
+                                                    <i class="fas fa-clock me-2"></i>服務時間
+                                                </h6>
+                                                <ul class="mb-0 small">
+                                                    <li>拍攝時間依照合約為主</li>
+                                                    <li>特殊時間請提前聯繫討論</li>
+                                                    <li>建議於在婚禮前 4-5 個月拍攝，是最完美的時間唷！</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="text-center mt-4">
+                                        <a href="https://www.instagram.com/sumkiss.film/" target="_blank" class="btn btn-outline-warning">
+                                            <i class="fas fa-calendar-alt me-2"></i>預約諮詢
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <!-- 頁尾區塊 - 使用 css/footer.css 中的 footer 相關樣式 -->
+    <footer>
+        <div class="footer-content">
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <p>Instagram：<a href="https://www.instagram.com/sumkiss.film/">sumkiss.film</a></p>
+                <p>商業合作：<a href="mailto:sumkiss.film@gmail.com">sumkiss.film@gmail.com</a></p>
+                <p><a href="https://sumkissfilm.github.io/homepage/">首頁</a></p>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <p>追蹤我們</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@sumkiss" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sumkiss.film/" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sumkiss.film" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2024 Summer Kisses 影像工作室 版權所有｜網頁設計 by Gary Chan｜技術支持 by Jinhe Chen</p>
+        </div>
+    </footer>
+
+
+    <!-- 舊版Scripts先隱藏，避免影響新版 -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    -->
+
+        <!-- ===== SCRIPTS ===== -->
+    
+    <!-- External Scripts -->
+    <!-- Bootstrap JavaScript - 提供導航列響應式功能 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Instagram Embed Script - 用於 Instagram 內容嵌入 -->
+    <script async src="//www.instagram.com/embed.js"></script>
+    
+    <!-- Local Scripts -->
+    <!-- 主要 JavaScript 檔案 - 包含導航選單、滾動效果、互動功能 -->
+    <script src="js/main.js"></script>
+    <!-- 滾動效果 JavaScript 檔案 - 專門處理頁首滾動背景色變化 -->
+    <script src="js/scroll.js"></script>
+    <!-- About 頁面專用 JavaScript 檔案 - 包含滾動動畫、互動效果 -->
+    <script src="js/aboutscript.js"></script>
+    <!-- Footer JavaScript 檔案 - 包含頁尾互動功能、動畫效果、無障礙功能 -->
+    <script src="js/footer.js"></script>
+    <!-- 輪播功能 JavaScript 檔案 - 處理文字輪播功能 -->
+    <script src="js/carousel.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+</body>
+</html>

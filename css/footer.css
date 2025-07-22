@@ -1,0 +1,297 @@
+/* ========================================
+   SUMMER KISSES - FOOTER STYLES
+   ======================================== */
+/* 
+  使用說明：
+  1. 在 HTML 檔案的 <head> 中引入此 CSS 檔案
+  2. 確保已引入 Font Awesome 圖示庫
+  3. 支援響應式設計，自動適應不同螢幕尺寸
+  4. 包含無障礙功能和效能優化
+*/
+
+/* ===== FOOTER BASE STYLES ===== */
+/* 頁尾基礎樣式 - 深色主題設計 */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 0;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+/* 頁尾內容容器 - 使用 Grid 佈局 */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* 頁尾區塊 - 垂直排列 */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 頁尾標題樣式 */
+.footer-section h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    color: #f7bc51;
+}
+
+/* 頁尾段落文字樣式 */
+.footer-section p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* 頁尾連結樣式 */
+.footer-section p a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 頁尾連結懸停效果 */
+.footer-section p a:hover {
+    color: #f7bc51;
+}
+
+/* ===== SOCIAL MEDIA LINKS ===== */
+/* 社群媒體連結容器 */
+.footer-section .social-links {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+    border: none;
+    padding: 0;
+}
+
+/* 社群媒體連結按鈕 */
+.social-links a {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    border: none;
+}
+
+/* 社群媒體連結懸停效果 */
+.social-links a:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+    color: #f7bc51;
+}
+
+/* ===== COPYRIGHT SECTION ===== */
+/* 版權資訊區塊 */
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* 桌面版樣式 (≥992px) */
+@media (min-width: 992px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    
+    .footer-section {
+        gap: 1.5rem;
+    }
+    
+    .footer-section .social-links {
+        gap: 1.5rem;
+    }
+    
+    .footer-bottom {
+        padding-top: 1.5rem;
+        font-size: 13px;
+    }
+}
+
+/* 平板版樣式 (≤991px) */
+@media (max-width: 991px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-section {
+        gap: 1.2rem;
+    }
+    
+    .footer-section .social-links {
+        gap: 1.2rem;
+    }
+}
+
+/* 手機版樣式 (≤768px) */
+@media (max-width: 768px) {
+    footer {
+        padding: 2.5rem 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .footer-section {
+        align-items: center;
+    }
+
+    .footer-section .social-links {
+        justify-content: center;
+        margin-top: 1rem;
+        border: none;
+        padding: 0;
+    }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        padding: 1.5rem 1rem 0;
+        font-size: 12px;
+    }
+}
+
+/* 小手機版樣式 (≤576px) */
+@media (max-width: 576px) {
+    footer {
+        padding: 2rem 0;
+    }
+    
+    .footer-content {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .footer-section h3 {
+        font-size: 15px;
+    }
+
+    .footer-section p {
+        font-size: 14px;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+    
+    .footer-bottom {
+        font-size: 11px;
+        padding: 1rem 1rem 0;
+    }
+}
+
+/* 超小螢幕樣式 (≤400px) */
+@media screen and (max-width: 400px) {
+    .footer-content {
+        padding: 0 0.5rem;
+    }
+    
+    .footer-section p {
+        font-size: 13px;
+    }
+    
+    .social-links a {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .footer-bottom {
+        font-size: 11px;
+    }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+/* 無障礙功能增強 */
+
+/* 焦點狀態樣式 */
+.social-links a:focus,
+.footer-section p a:focus {
+    outline: 2px solid #f7bc51;
+    outline-offset: 2px;
+}
+
+/* 減少動畫偏好設定 */
+@media (prefers-reduced-motion: reduce) {
+    .social-links a,
+    .footer-section p a {
+        transition: none;
+    }
+    
+    .social-links a:hover {
+        transform: none;
+    }
+}
+
+/* 高對比模式支援 */
+@media (prefers-contrast: high) {
+    footer {
+        background-color: #000;
+        color: #fff;
+    }
+    
+    .footer-section p a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+    
+    .social-links a:hover {
+        background: #fff;
+        color: #000;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+/* 列印樣式 */
+@media print {
+    footer {
+        background-color: #fff !important;
+        color: #000 !important;
+        border-top: 2px solid #000;
+    }
+    
+    .footer-section p a {
+        color: #000 !important;
+    }
+    
+    .social-links {
+        display: none !important;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #000;
+    }
+} 

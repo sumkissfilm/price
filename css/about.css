@@ -1,0 +1,1135 @@
+/* ========================================
+   SUMMER KISSES - ABOUT PAGE STYLESHEET
+   ======================================== */
+
+/* ===== RESET AND BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* 防止水平滾動 */
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* ===== FONT DEFINITIONS ===== */
+/* 使用 Google Fonts ABeeZee 字體，已在 HTML 中引入 */
+
+/* ===== UTILITY CLASSES ===== */
+.animate-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text-warning {
+    color: #f7bc51 !important;
+}
+
+.btn-warning {
+    background-color: #f7bc51 !important;
+    border-color: #f7bc51 !important;
+    color: #fff !important;
+}
+
+.btn-warning:hover {
+    background-color: #e5a93c !important;
+    border-color: #e5a93c !important;
+}
+
+.bg-gradient {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+/* .section-title 已在 style.css 中定義，避免重複 */
+
+/* .section-title::after 已在 style.css 中定義，避免重複 */
+
+/* ===== MAIN CONTENT SECTIONS ===== */
+
+/* About Hero Section */
+.about-hero {
+    position: relative;
+    height: 700px;
+    background-image: url('../images/hero/0623_08.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.about-hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.about-hero .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero .col-12 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* .about-hero-content h1 已在 style.css 中定義，避免重複 */
+
+.about-hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* ===== STORY SECTION ===== */
+.about-story {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.story-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 修正container的padding問題 */
+.about-story .container,
+.about-team .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.story-content h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+.story-content > p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease 0.2s;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Story photos container */
+.about-story .col-lg-6:first-child {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding-top: 0;
+}
+
+.about-story .col-lg-6:first-child .row {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-story .col-lg-6:first-child .col-12 {
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-story .col-lg-6:first-child .col-12:last-child {
+    margin-bottom: 0;
+}
+
+.story-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+.story-image:hover {
+    transform: translateY(-5px);
+}
+
+.story-image img {
+    transition: transform 0.6s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.story-image:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+.overlay-content span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.story-image:hover .overlay-content span {
+    transform: scale(1.1);
+}
+
+.story-text {
+    text-align: left;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s ease 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100%;
+    height: 100%;
+    padding: 1.5rem 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.story-text h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    font-size: 1.1rem;
+    color: #666;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-list li::before {
+    content: '•';
+    color: #f7bc51;
+    position: absolute;
+    left: 0;
+}
+
+/* ===== TEAM SECTION ===== */
+.about-team {
+    padding: 100px 0;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Team photos container */
+.about-team .col-lg-6:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.about-team .col-lg-6:first-child .row {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-team .col-lg-6:first-child .col-12 {
+    margin-bottom: 1.2rem; /* 調整照片之間的間距為1.2rem */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-team .col-lg-6:first-child .col-12:last-child {
+    margin-bottom: 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.team-member {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-image {
+    position: relative;
+    padding-top: 80%; /* 調整為5:4橫式照片比例 */
+    overflow: hidden;
+}
+
+.member-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 1.5rem;
+    color: #fff;
+}
+
+.member-info h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.member-info .title {
+    font-size: 0.9rem;
+    color: #f7bc51;
+    margin-bottom: 0.5rem;
+}
+
+.member-info .description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Team Text Styling */
+.team-text {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.team-text h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #333;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.team-text p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* ===== TEXT CAROUSEL STYLES ===== */
+.text-carousel-container {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden; /* 改為 hidden 防止內容溢出 */
+    max-width: 100%;
+    width: 100%;
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem; /* 減少與文字的間距 */
+    position: relative;
+    z-index: 5;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+}
+
+.carousel-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #f7bc51;
+    background-color: transparent;
+    color: #f7bc51;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    min-width: 100px;
+    position: relative;
+    z-index: 10;
+    user-select: none;
+    pointer-events: auto;
+    outline: none;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.carousel-btn.active {
+    background-color: #f7bc51;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 188, 81, 0.3);
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.carousel-btn:hover {
+    background-color: #f7bc51;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 188, 81, 0.3);
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.carousel-btn:not(.active):hover {
+    background-color: rgba(247, 188, 81, 0.1);
+    color: #f7bc51;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.carousel-content {
+    position: relative;
+    height: 750px; /* 桌面版高度 */
+    overflow: hidden; /* 改為 hidden 防止內容溢出 */
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.message-content.active {
+    opacity: 1;
+    visibility: visible;
+    position: absolute; /* 改回 absolute 以配合固定高度 */
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.message-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.4rem; /* 稍微增加段落間距，讓文字更易讀 */
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.message-content strong {
+    color: #666;
+    font-weight: 500;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.message-content a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.message-content a:hover {
+    color: #e0a800 !important;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* ===== CONTACT SECTION ===== */
+.about-contact {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.info-item {
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+.info-item i {
+    font-size: 2.5rem;
+    color: #f7bc51;
+    margin-bottom: 1.5rem;
+}
+
+.info-content h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.info-content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-cta {
+    text-align: center;
+    margin-top: 4rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+.contact-cta p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #f7bc51;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #e5a93c;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Desktop Navigation (992px+) */
+@media (min-width: 992px) {
+    /* About Hero Section */
+    .about-hero {
+        height: 50vh;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .about-hero .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .about-hero .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .about-hero .col-12 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .about-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .story-grid,
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* 桌面版文字容器對齊優化 */
+    .story-text,
+    .team-text {
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+    }
+    
+    /* 桌面版圖片容器對齊 */
+    .about-story .col-lg-6:first-child {
+        align-items: flex-start;
+        padding-top: 0;
+    }
+    
+    .about-team .col-lg-6:first-child {
+        align-items: center;
+    }
+    
+    .about-story .col-lg-6:first-child .row,
+    .about-team .col-lg-6:first-child .row {
+        align-items: flex-start;
+    }
+
+    .about-story .row.align-items-start {
+      align-items: stretch !important;
+    }
+    .about-story .col-lg-6 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .about-story .col-lg-6:first-child .row {
+      height: 100%;
+    }
+    .story-image {
+      flex: 1 1 auto;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+}
+
+/* Tablet Navigation (768px-991px) */
+@media (max-width: 991px) {
+    /* About Hero Section */
+    .about-hero {
+        height: 40vh;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .about-hero .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .about-hero .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .about-hero .col-12 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-hero-content h1 {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .about-hero-content p {
+        font-size: 0.9375rem; /* 15px */
+    }
+
+    /* 修正container在平板版的設定 */
+    .about-story .container,
+    .about-team .container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story-text {
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0.5rem 0;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .team-text {
+        text-align: center;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem 0;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    /* 平板版圖片容器對齊 */
+    .about-story .col-lg-6:first-child {
+        align-items: flex-start;
+        padding-top: 0.5rem;
+    }
+    
+    .about-team .col-lg-6:first-child {
+        align-items: center;
+    }
+    
+    .about-story .col-lg-6:first-child .row,
+    .about-team .col-lg-6:first-child .row {
+        align-items: center;
+    }
+
+    .team-grid,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-image {
+        padding-top: 80%; /* 調整移動設備照片高度為5:4比例 */
+    }
+}
+
+/* 響應式設計已移至 style.css，避免重複定義 */
+
+/* ===== TEXT CAROUSEL RESPONSIVE STYLES ===== */
+
+/* 平板版 (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .carousel-content {
+        height: 500px; /* 平板版高度調整 */
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+    }
+    
+    .message-content {
+        overflow-y: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .message-content.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    /* 滑動提示樣式 */
+    .scroll-hint {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        opacity: 1;
+        z-index: 10;
+        pointer-events: none;
+        animation: fadeInOut 3s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+    }
+}
+
+/* 手機版 (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .carousel-content {
+        height: 450px; /* 手機版高度調整 */
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+    }
+    
+    .message-content {
+        overflow-y: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .message-content.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    /* 滑動提示樣式 */
+    .scroll-hint {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        opacity: 0.8;
+        z-index: 10;
+        pointer-events: none;
+        animation: fadeInOut 3s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+    }
+}
+
+/* 小手機版 (400px - 575px) */
+@media (min-width: 400px) and (max-width: 575px) {
+    .carousel-content {
+        height: 450px; /* 小手機版高度調整 */
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+    }
+    
+    .message-content {
+        overflow-y: auto;
+        padding-left: 12px;
+        padding-right: 12px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .message-content.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .carousel-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        min-width: 70px;
+    }
+    
+    /* 滑動提示樣式 */
+    .scroll-hint {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        opacity: 0.8;
+        z-index: 10;
+        pointer-events: none;
+        animation: fadeInOut 3s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+    }
+}
+
+/* 1. 手機下調整 container/row padding，確保內容正常顯示 */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  .about-story .container,
+  .about-team .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* 確保 Team Section 不會產生水平滾動 */
+  .about-team {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .text-carousel-container {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .carousel-content {
+    height: 450px !important; /* 超小手機版高度調整 */
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+  
+  .message-content {
+    overflow-y: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+  
+  .message-content.active {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+  
+  /* 滑動提示樣式 */
+  .scroll-hint {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    opacity: 0.8 !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+    animation: fadeInOut 3s ease-in-out infinite !important;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+  
+  .story-text,
+  .team-text {
+    padding: 0.2rem 0 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  /* 手機版圖片容器對齊 */
+  .about-story .col-lg-6:first-child {
+    align-items: flex-start !important;
+    padding-top: 0 !important;
+  }
+  
+  .about-team .col-lg-6:first-child {
+    align-items: center !important;
+  }
+  
+  .about-story .col-lg-6:first-child .row,
+  .about-team .col-lg-6:first-child .row {
+    align-items: center !important;
+  }
+}
+
+/* 2. 圖片置中與響應式 */
+.story-image img,
+.team-member img,
+.member-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+

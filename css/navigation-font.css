@@ -1,0 +1,125 @@
+/* ========================================
+   NAVIGATION FONTS - UNIFIED FONT SETTINGS
+   ======================================== */
+
+/* ===== GLOBAL FONT FALLBACK CHAIN ===== */
+:root {
+    --primary-font: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-smoothing: antialiased;
+    --font-rendering: optimizeLegibility;
+}
+
+/* ===== NAVIGATION FONT SETTINGS ===== */
+
+/* All Navigation Text Elements - Exclude Font Awesome Icons */
+.navbar,
+.navbar-brand,
+.navbar-nav,
+.nav-item,
+.nav-link,
+.navbar-toggler,
+.social-icons a:not(.social-icons a i):not(.social-icons a .fab):not(.social-icons a .fas):not(.social-icons a .far) {
+    font-family: var(--primary-font);
+    -webkit-font-smoothing: var(--font-smoothing);
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: var(--font-rendering);
+    font-synthesis: none;
+}
+
+/* Navigation Links - Base */
+.nav-link {
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.3rem 0;
+}
+
+/* Hamburger Menu Button */
+.navbar-toggler {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    color: #000;
+}
+
+/* Social Icons Link Wrapper */
+.social-icons a {
+    font-size: 0.8rem;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===== FONT AWESOME ICON SETTINGS ===== */
+/* Ensure Font Awesome Icons Use Correct Font */
+.social-icons i,
+.social-icons .fab,
+.social-icons .fas,
+.social-icons .far {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands" !important;
+    font-weight: 900; /* solid weight for Free icons */
+    font-style: normal !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Specific weight for brand icons */
+.social-icons .fab {
+    font-weight: 400 !important; /* brand weight */
+}
+
+/* Force icon display */
+.social-icons a i::before {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* ===== RESPONSIVE FONT SETTINGS ===== */
+
+/* Desktop Navigation (≥992px) */
+@media (min-width: 992px) {
+    .nav-link {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        color: #000;
+        padding: 0.5rem 1rem !important;
+    }
+
+    .social-icons a {
+        font-size: 1.25rem;
+    }
+}
+
+/* Mobile Navigation (≤576px) */
+@media (max-width: 576px) {
+    .nav-link {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        padding: 0.8rem 0;
+    }
+
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== FONT LOADING FALLBACKS ===== */
+
+/* Fallback for older browsers */
+.nav-link,
+.navbar-toggler,
+.social-icons a {
+    font-display: swap;
+}

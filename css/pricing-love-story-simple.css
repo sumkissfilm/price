@@ -1,0 +1,646 @@
+/* ===== 簡化版愛情故事價格區塊CSS ===== */
+
+/* 主題色彩 */
+:root {
+    --primary-color: #f7bc51;
+    --secondary-color: #f39c12;
+    --text-dark: #333;
+    --text-muted: #666;
+    --text-light: #999;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+/* ===== 統一按鈕樣式 ===== */
+/* 所有預約諮詢按鈕的統一樣式 */
+.text-center .btn-outline-warning {
+    border-radius: 50px !important;
+    padding: 0.8rem 2rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    text-align: center !important;
+    font-size: 0.95rem !important;
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    background: transparent !important;
+    min-width: 200px !important;
+}
+
+.text-center .btn-outline-warning:hover {
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(247, 188, 81, 0.3) !important;
+}
+
+/* 價格區塊基本樣式 */
+section.pricing-section {
+    padding: 5rem 0 !important;
+    background-color: #f8f9fa !important;
+}
+
+/* 價格卡片樣式 */
+section.pricing-section .pricing-card {
+    margin-bottom: 2rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+section.pricing-section .pricing-card:hover {
+    transform: translateY(-5px) !important;
+}
+
+/* 卡片樣式 */
+section.pricing-section .pricing-card .card {
+    border: none !important;
+    border-radius: 15px !important;
+    background: var(--white) !important;
+    box-shadow: 0 5px 15px var(--shadow-light) !important;
+    transition: all 0.3s ease !important;
+}
+
+section.pricing-section .pricing-card:hover .card {
+    box-shadow: 0 15px 35px var(--shadow-medium) !important;
+}
+
+/* 卡片內容樣式 */
+section.pricing-section .pricing-card .card-body {
+    padding: 1.5rem !important;
+}
+
+/* 標題樣式 */
+section.pricing-section .pricing-card .card-title {
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.4 !important;
+}
+
+/* 標題中的徽章樣式 */
+section.pricing-section .pricing-card .card-title .badge {
+    margin-top: 0.5rem !important;
+    display: inline-block !important;
+    font-size: 0.7rem !important;
+    padding: 0.4rem 0.6rem !important;
+    border-radius: 15px !important;
+    vertical-align: middle !important;
+}
+
+/* 第二個徽章的間距調整 */
+section.pricing-section .pricing-card .card-title .badge + .badge {
+    margin-left: 0.5rem !important;
+}
+
+/* 標題換行後的間距 */
+section.pricing-section .pricing-card .card-title br {
+    display: block !important;
+    content: "" !important;
+    margin-top: 0.3rem !important;
+}
+
+/* 徽章圖示樣式 */
+section.pricing-section .pricing-card .card-title .badge i {
+    font-size: 0.6rem !important;
+    margin-right: 0.2rem !important;
+}
+
+/* 徽章樣式 */
+section.pricing-section .pricing-card .badge {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 20px !important;
+}
+
+/* 價格顯示樣式 */
+section.pricing-section .price {
+    margin: 1.5rem 0 !important;
+}
+
+section.pricing-section .original-price {
+    text-decoration: line-through !important;
+    color: var(--text-light) !important;
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+section.pricing-section .original-price .h5 {
+    font-size: 1rem !important;
+}
+
+section.pricing-section .original-price::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin-top: 0.5rem;
+}
+
+section.pricing-section .discounted-price {
+    margin-top: 0.5rem !important;
+}
+
+section.pricing-section .discounted-price .h2 {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 2.5rem !important;
+}
+
+section.pricing-section .discounted-price .h3 {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 2rem !important;
+}
+
+section.pricing-section .discounted-price .text-muted {
+    font-size: 1rem !important;
+    color: var(--text-muted) !important;
+}
+
+/* 功能列表樣式 */
+section.pricing-section .pricing-card ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+section.pricing-section .pricing-card ul li {
+    margin-bottom: 0.5rem !important;
+    color: var(--text-muted) !important;
+    position: relative !important;
+    padding-left: 0 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+}
+
+section.pricing-section .pricing-card ul li i {
+    color: var(--primary-color) !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-right: 0 !important;
+    margin-top: 0.1rem !important;
+    flex-shrink: 0 !important;
+}
+
+/* 覆蓋Bootstrap的me-2類別 */
+section.pricing-section .pricing-card ul li i.me-2 {
+    margin-right: 0 !important;
+}
+
+/* 按鈕樣式 - 使用統一按鈕樣式 */
+/* 移除舊的按鈕樣式，使用統一的 .text-center .btn-outline-warning 樣式 */
+
+/* 響應式設計 */
+
+/* 大螢幕 (≥1200px) */
+@media (min-width: 1200px) {
+    section.pricing-section .pricing-card .card-body {
+        padding: 1.75rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title {
+        font-size: 1.2rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge {
+        margin-top: 0.6rem !important;
+        font-size: 0.75rem !important;
+        padding: 0.5rem 0.7rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge i {
+        font-size: 0.65rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge + .badge {
+        margin-left: 0.6rem !important;
+    }
+    
+    section.pricing-section .discounted-price .h3 {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* 中等螢幕 (≥992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    section.pricing-section .pricing-card .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    section.pricing-section .discounted-price .h3 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* 小螢幕 (≥768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    section.pricing-section .pricing-card .card-body {
+        padding: 1.25rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title {
+        font-size: 1rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge {
+        margin-top: 0.4rem !important;
+        font-size: 0.65rem !important;
+        padding: 0.3rem 0.5rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge i {
+        font-size: 0.55rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge + .badge {
+        margin-left: 0.4rem !important;
+    }
+    
+    section.pricing-section .discounted-price .h3 {
+        font-size: 1.6rem !important;
+    }
+    
+    section.pricing-section .pricing-card ul li {
+        font-size: 0.85rem !important;
+        line-height: 1.3 !important;
+        gap: 0.4rem !important;
+    }
+    
+    section.pricing-section .pricing-card ul li i {
+        margin-top: 0.05rem !important;
+    }
+    
+    section.pricing-section .pricing-card ul li i.me-2 {
+        margin-right: 0 !important;
+    }
+}
+
+/* 手機版 (≤767px) */
+@media (max-width: 767px) {
+    section.pricing-section {
+        padding: 2rem 0 !important;
+    }
+    
+    section.pricing-section .pricing-card .card-body {
+        padding: 1rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge {
+        margin-top: 0.3rem !important;
+        font-size: 0.6rem !important;
+        padding: 0.25rem 0.4rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge i {
+        font-size: 0.5rem !important;
+    }
+    
+    section.pricing-section .pricing-card .card-title .badge + .badge {
+        margin-left: 0.3rem !important;
+    }
+    
+    /* 手機版徽章換行 */
+    @media (max-width: 480px) {
+        section.pricing-section .pricing-card .card-title .badge + .badge {
+            display: block !important;
+            margin-left: 0 !important;
+            margin-top: 0.2rem !important;
+        }
+    }
+    
+    section.pricing-section .discounted-price .h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    section.pricing-section .pricing-card ul li {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.4rem !important;
+        line-height: 1.3 !important;
+        gap: 0.3rem !important;
+    }
+    
+    section.pricing-section .pricing-card ul li i {
+        margin-top: 0.05rem !important;
+        margin-right: 0.4rem !important;
+    }
+    
+    section.pricing-section .pricing-card ul li i.me-2 {
+        margin-right: 0 !important;
+    }
+    
+    .text-center .btn-outline-warning {
+        padding: 0.6rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+} 
+
+/* 商業形象廣告諮詢卡片樣式 */
+section.about-story .card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border-radius: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+section.about-story .card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+section.about-story .card .card-body {
+    padding: 3rem 2rem !important;
+}
+
+section.about-story .card .fas.fa-handshake {
+    background: linear-gradient(135deg, #f7bc51, #f39c12) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+section.about-story .card h3 {
+    color: #333 !important;
+    font-weight: 600 !important;
+}
+
+section.about-story .card p {
+    line-height: 1.6 !important;
+    color: #666 !important;
+}
+
+/* 商業拍攝合作按鈕樣式 - 使用統一按鈕樣式 */
+/* 移除舊的按鈕樣式，使用統一的 .text-center .btn-outline-warning 樣式 */
+
+/* 響應式調整 */
+
+/* 大螢幕 (≥1200px) */
+@media (min-width: 1200px) {
+    .text-center .btn-outline-warning {
+        padding: 1rem 2.5rem !important;
+        font-size: 1rem !important;
+        min-width: 250px !important;
+    }
+}
+
+/* 中等螢幕 (≥768px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .text-center .btn-outline-warning {
+        padding: 0.8rem 2.2rem !important;
+        font-size: 0.95rem !important;
+        min-width: 220px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    section.about-story .card .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    section.about-story .card h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    section.about-story .card .fas.fa-handshake {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    section.about-story .card .card-body {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .text-center .btn-outline-warning {
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.85rem !important;
+        min-width: 160px !important;
+    }
+} 
+
+/* ===== 車馬費區塊CSS ===== */
+
+/* 車馬費區塊基本樣式 */
+section.transport-cost-section {
+    background-color: #f8f9fa !important;
+    padding: 5rem 0 !important;
+}
+
+/* 車馬費卡片樣式 */
+section.transport-cost-section .transport-cost-card {
+    transition: transform 0.3s ease !important;
+}
+
+section.transport-cost-section .transport-cost-card:hover {
+    transform: translateY(-5px) !important;
+}
+
+/* 卡片樣式 */
+section.transport-cost-section .transport-cost-card .card {
+    border: none !important;
+    border-radius: 20px !important;
+    background: var(--white) !important;
+    box-shadow: 0 10px 30px var(--shadow-light) !important;
+    transition: all 0.3s ease !important;
+}
+
+section.transport-cost-section .transport-cost-card:hover .card {
+    box-shadow: 0 20px 40px var(--shadow-medium) !important;
+}
+
+/* 卡片內容樣式 */
+section.transport-cost-section .transport-cost-card .card-body {
+    padding: 3rem !important;
+}
+
+/* 圖示樣式 */
+section.transport-cost-section .fas.fa-car {
+    background: linear-gradient(135deg, #f7bc51, #f39c12) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* 標題樣式 */
+section.transport-cost-section h2.section-title {
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+}
+
+section.transport-cost-section h3 {
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+}
+
+/* 表格樣式 */
+section.transport-cost-section .table {
+    margin-bottom: 0 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+section.transport-cost-section .table thead th {
+    background-color: #f8f9fa !important;
+    border: none !important;
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+    padding: 1rem 0.75rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+section.transport-cost-section .table tbody td {
+    border: none !important;
+    padding: 1rem 0.75rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+section.transport-cost-section .table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+section.transport-cost-section .table tbody tr:hover {
+    background-color: rgba(247, 188, 81, 0.05) !important;
+}
+
+/* 價格顏色樣式 */
+section.transport-cost-section .text-success {
+    color: #28a745 !important;
+}
+
+section.transport-cost-section .text-warning {
+    color: var(--primary-color) !important;
+}
+
+/* 警告框樣式 */
+section.transport-cost-section .alert {
+    border-radius: 15px !important;
+    padding: 1.5rem !important;
+    margin-bottom: 0 !important;
+}
+
+section.transport-cost-section .alert-info {
+    background-color: rgba(13, 202, 240, 0.1) !important;
+    color: #0c5460 !important;
+}
+
+section.transport-cost-section .alert-warning {
+    background-color: rgba(247, 188, 81, 0.1) !important;
+    color: #856404 !important;
+}
+
+section.transport-cost-section .alert-heading {
+    color: inherit !important;
+    font-weight: 600 !important;
+}
+
+section.transport-cost-section .alert ul {
+    margin-bottom: 0 !important;
+    padding-left: 1.2rem !important;
+}
+
+section.transport-cost-section .alert li {
+    margin-bottom: 0.25rem !important;
+    line-height: 1.4 !important;
+}
+
+/* 車馬費區塊按鈕樣式 - 使用統一按鈕樣式 */
+/* 移除舊的按鈕樣式，使用統一的 .text-center .btn-outline-warning 樣式 */
+
+/* 響應式設計 */
+
+/* 大螢幕 (≥1200px) */
+@media (min-width: 1200px) {
+    section.transport-cost-section .transport-cost-card .card-body {
+        padding: 3.5rem !important;
+    }
+}
+
+/* 中等螢幕 (≥768px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    section.transport-cost-section .transport-cost-card .card-body {
+        padding: 2.5rem !important;
+    }
+}
+
+/* 小螢幕 (≤767px) */
+@media (max-width: 767px) {
+    section.transport-cost-section {
+        padding: 3rem 0 !important;
+    }
+    
+    section.transport-cost-section .transport-cost-card .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    section.transport-cost-section h2.section-title {
+        font-size: 1.5rem !important;
+    }
+    
+    section.transport-cost-section h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    section.transport-cost-section .fas.fa-car {
+        font-size: 2.5rem !important;
+    }
+    
+    section.transport-cost-section .table thead th,
+    section.transport-cost-section .table tbody td {
+        padding: 0.75rem 0.5rem !important;
+        font-size: 0.85rem !important;
+    }
+    
+    section.transport-cost-section .alert {
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    section.transport-cost-section .alert ul {
+        padding-left: 1rem !important;
+    }
+    
+    .text-center .btn-outline-warning {
+        padding: 0.7rem 1.5rem !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+/* 超小螢幕 (≤576px) */
+@media (max-width: 576px) {
+    section.transport-cost-section .transport-cost-card .card-body {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    section.transport-cost-section .table-responsive {
+        font-size: 0.8rem !important;
+    }
+    
+    section.transport-cost-section .table thead th,
+    section.transport-cost-section .table tbody td {
+        padding: 0.5rem 0.25rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    section.transport-cost-section .alert {
+        padding: 0.75rem !important;
+    }
+    
+    .text-center .btn-outline-warning {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.8rem !important;
+    }
+} 
