@@ -81,17 +81,23 @@ section.pricing-section .pricing-card .card-title {
 
 /* 標題中的徽章樣式 */
 section.pricing-section .pricing-card .card-title .badge {
-    margin-top: 0.5rem !important;
+    margin-top: 0.8rem !important;
+    margin-bottom: 0.1rem !important;
     display: inline-block !important;
     font-size: 0.7rem !important;
     padding: 0.4rem 0.6rem !important;
     border-radius: 15px !important;
     vertical-align: middle !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    min-width: fit-content !important;
 }
 
 /* 第二個徽章的間距調整 */
 section.pricing-section .pricing-card .card-title .badge + .badge {
     margin-left: 0.5rem !important;
+    width: auto !important;
+    min-width: fit-content !important;
 }
 
 /* 標題換行後的間距 */
@@ -210,7 +216,8 @@ section.pricing-section .pricing-card ul li i.me-2 {
     }
     
     section.pricing-section .pricing-card .card-title .badge {
-        margin-top: 0.6rem !important;
+        margin-top: 0.9rem !important;
+        margin-bottom: 0.15rem !important;
         font-size: 0.75rem !important;
         padding: 0.5rem 0.7rem !important;
     }
@@ -250,7 +257,8 @@ section.pricing-section .pricing-card ul li i.me-2 {
     }
     
     section.pricing-section .pricing-card .card-title .badge {
-        margin-top: 0.4rem !important;
+        margin-top: 0.7rem !important;
+        margin-bottom: 0.1rem !important;
         font-size: 0.65rem !important;
         padding: 0.3rem 0.5rem !important;
     }
@@ -298,9 +306,14 @@ section.pricing-section .pricing-card ul li i.me-2 {
     }
     
     section.pricing-section .pricing-card .card-title .badge {
-        margin-top: 0.3rem !important;
+        margin-top: 0.6rem !important;
+        margin-bottom: 0.05rem !important;
         font-size: 0.6rem !important;
         padding: 0.25rem 0.4rem !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        width: auto !important;
+        min-width: fit-content !important;
     }
     
     section.pricing-section .pricing-card .card-title .badge i {
@@ -309,14 +322,40 @@ section.pricing-section .pricing-card ul li i.me-2 {
     
     section.pricing-section .pricing-card .card-title .badge + .badge {
         margin-left: 0.3rem !important;
+        display: inline-block !important;
+        margin-top: 0 !important;
+        width: auto !important;
+        min-width: fit-content !important;
     }
     
-    /* 手機版徽章換行 */
+    /* 手機版徽章保持同行 - 所有手機版斷點 */
     @media (max-width: 480px) {
         section.pricing-section .pricing-card .card-title .badge + .badge {
-            display: block !important;
-            margin-left: 0 !important;
-            margin-top: 0.2rem !important;
+            display: inline-block !important;
+            margin-left: 0.3rem !important;
+            margin-top: 0 !important;
+            width: auto !important;
+            min-width: fit-content !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        section.pricing-section .pricing-card .card-title .badge + .badge {
+            display: inline-block !important;
+            margin-left: 0.3rem !important;
+            margin-top: 0 !important;
+            width: auto !important;
+            min-width: fit-content !important;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        section.pricing-section .pricing-card .card-title .badge + .badge {
+            display: inline-block !important;
+            margin-left: 0.3rem !important;
+            margin-top: 0 !important;
+            width: auto !important;
+            min-width: fit-content !important;
         }
     }
     
