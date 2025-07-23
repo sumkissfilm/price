@@ -134,14 +134,76 @@ section.pricing-section .pricing-card .card-title .badge {
     white-space: nowrap !important;
     width: auto !important;
     min-width: fit-content !important;
+    line-height: 1.2 !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    letter-spacing: 0.5px !important;
 }
 
 /* 第二個徽章的間距調整 */
 section.pricing-section .pricing-card .card-title .badge + .badge {
-    margin-left: 0.5rem !important;
+    margin-left: 0 !important;
     width: auto !important;
     min-width: fit-content !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    line-height: 1.2 !important;
 }
+
+/* 確保所有徽章在同一行對齊 */
+section.pricing-section .pricing-card .card-title br + .badge {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    line-height: 1.2 !important;
+}
+
+/* 推薦徽章樣式 */
+section.pricing-section .pricing-card .card-title .badge.bg-warning {
+    background-color: #f7bc51 !important;
+    color: #333 !important;
+    border: 1px solid #f39c12 !important;
+}
+
+/* 限時徽章樣式 */
+section.pricing-section .pricing-card .card-title .badge.bg-danger {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    border: 1px solid #c82333 !important;
+}
+
+
+
+/* 徽章圖示統一樣式 */
+section.pricing-section .pricing-card .card-title .badge i {
+    font-size: 0.6rem !important;
+    margin-right: 0.2rem !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+/* 徽章懸停效果 */
+section.pricing-section .pricing-card .card-title .badge {
+    transition: all 0.3s ease !important;
+}
+
+section.pricing-section .pricing-card .card-title .badge:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 推薦徽章懸停效果 */
+section.pricing-section .pricing-card .card-title .badge.bg-warning:hover {
+    background-color: #f39c12 !important;
+    border-color: #e67e22 !important;
+}
+
+/* 限時徽章懸停效果 */
+section.pricing-section .pricing-card .card-title .badge.bg-danger:hover {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+}
+
+
 
 /* 標題換行後的間距 */
 section.pricing-section .pricing-card .card-title br {
@@ -150,11 +212,94 @@ section.pricing-section .pricing-card .card-title br {
     margin-top: 0.3rem !important;
 }
 
-/* 徽章圖示樣式 */
-section.pricing-section .pricing-card .card-title .badge i {
-    font-size: 0.6rem !important;
-    margin-right: 0.2rem !important;
+/* 徽章容器統一樣式 */
+section.pricing-section .pricing-card .card-title {
+    display: block !important;
 }
+
+section.pricing-section .pricing-card .card-title br + .badge {
+    margin-top: 0.8rem !important;
+    margin-bottom: 0.1rem !important;
+}
+
+/* 確保徽章在同一行顯示 - 強制左右並排排列 */
+section.pricing-section .pricing-card .card-title br + .badge,
+section.pricing-section .pricing-card .card-title br + .badge + .badge {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    float: none !important;
+    clear: none !important;
+    margin-right: 0.5rem !important;
+}
+
+/* 徽章容器 - 確保左右並排排列 */
+section.pricing-section .pricing-card .card-title br + span {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    margin-right: 0.5rem !important;
+}
+
+/* 強制徽章容器不換行 */
+section.pricing-section .pricing-card .card-title {
+    white-space: normal !important;
+}
+
+section.pricing-section .pricing-card .card-title br + * {
+    white-space: nowrap !important;
+    display: inline-block !important;
+    margin-right: 0.5rem !important;
+}
+
+/* 確保所有徽章都在同一行 - 左右並排 */
+section.pricing-section .pricing-card .card-title .badge {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    float: none !important;
+    clear: none !important;
+    vertical-align: middle !important;
+    margin-right: 0.5rem !important;
+}
+
+/* 最終強制規則 - 確保徽章左右並排排列 */
+section.pricing-section .pricing-card .card-title br + .badge,
+section.pricing-section .pricing-card .card-title br + .badge + .badge,
+section.pricing-section .pricing-card .card-title .badge + .badge {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    float: none !important;
+    clear: none !important;
+    vertical-align: middle !important;
+    line-height: 1.2 !important;
+    word-wrap: normal !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    margin-right: 0.5rem !important;
+}
+
+/* 防止徽章換行的額外保護 */
+@media (max-width: 767px) {
+    section.pricing-section .pricing-card .card-title br + .badge,
+    section.pricing-section .pricing-card .card-title br + .badge + .badge,
+    section.pricing-section .pricing-card .card-title .badge + .badge {
+        display: inline-block !important;
+        white-space: nowrap !important;
+        float: none !important;
+        clear: none !important;
+        vertical-align: middle !important;
+        line-height: 1.2 !important;
+        word-wrap: normal !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+        max-width: none !important;
+        width: auto !important;
+        min-width: fit-content !important;
+        margin-right: 0.3rem !important;
+    }
+}
+
+
 
 /* 徽章樣式 */
 section.pricing-section .pricing-card .badge {
@@ -267,10 +412,18 @@ section.pricing-section .pricing-card ul li i.me-2 {
     
     section.pricing-section .pricing-card .card-title .badge i {
         font-size: 0.65rem !important;
+        margin-right: 0.2rem !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
     }
     
     section.pricing-section .pricing-card .card-title .badge + .badge {
-        margin-left: 0.6rem !important;
+        margin-left: 0 !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        white-space: nowrap !important;
+        float: none !important;
+        clear: none !important;
     }
     
     section.pricing-section .discounted-price .h3 {
@@ -308,10 +461,18 @@ section.pricing-section .pricing-card ul li i.me-2 {
     
     section.pricing-section .pricing-card .card-title .badge i {
         font-size: 0.55rem !important;
+        margin-right: 0.2rem !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
     }
     
     section.pricing-section .pricing-card .card-title .badge + .badge {
-        margin-left: 0.4rem !important;
+        margin-left: 0 !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        white-space: nowrap !important;
+        float: none !important;
+        clear: none !important;
     }
     
     section.pricing-section .discounted-price .h3 {
@@ -357,48 +518,67 @@ section.pricing-section .pricing-card ul li i.me-2 {
         white-space: nowrap !important;
         width: auto !important;
         min-width: fit-content !important;
+        float: none !important;
+        clear: none !important;
     }
     
     section.pricing-section .pricing-card .card-title .badge i {
         font-size: 0.5rem !important;
+        margin-right: 0.2rem !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
     }
     
     section.pricing-section .pricing-card .card-title .badge + .badge {
-        margin-left: 0.3rem !important;
+        margin-left: 0 !important;
         display: inline-block !important;
         margin-top: 0 !important;
         width: auto !important;
         min-width: fit-content !important;
+        vertical-align: middle !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        float: none !important;
+        clear: none !important;
     }
     
     /* 手機版徽章保持同行 - 所有手機版斷點 */
     @media (max-width: 480px) {
         section.pricing-section .pricing-card .card-title .badge + .badge {
             display: inline-block !important;
-            margin-left: 0.3rem !important;
+            margin-left: 0 !important;
             margin-top: 0 !important;
             width: auto !important;
             min-width: fit-content !important;
+            white-space: nowrap !important;
+            float: none !important;
+            clear: none !important;
         }
     }
     
     @media (max-width: 576px) {
         section.pricing-section .pricing-card .card-title .badge + .badge {
             display: inline-block !important;
-            margin-left: 0.3rem !important;
+            margin-left: 0 !important;
             margin-top: 0 !important;
             width: auto !important;
             min-width: fit-content !important;
+            white-space: nowrap !important;
+            float: none !important;
+            clear: none !important;
         }
     }
     
     @media (max-width: 767px) {
         section.pricing-section .pricing-card .card-title .badge + .badge {
             display: inline-block !important;
-            margin-left: 0.3rem !important;
+            margin-left: 0 !important;
             margin-top: 0 !important;
             width: auto !important;
             min-width: fit-content !important;
+            white-space: nowrap !important;
+            float: none !important;
+            clear: none !important;
         }
     }
     
@@ -684,6 +864,23 @@ section.transport-cost-section .alert li {
     section.transport-cost-section .table tbody td {
         padding: 0.75rem 0.5rem !important;
         font-size: 0.85rem !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
+    }
+    
+    /* 中等螢幕表格文字換行優化 */
+    section.transport-cost-section .table tbody td br.d-md-none {
+        display: block !important;
+    }
+    
+    section.transport-cost-section .table tbody td .d-md-none {
+        display: block !important;
+        margin-top: 0.2rem !important;
+    }
+    
+    section.transport-cost-section .table tbody td .d-none.d-md-inline {
+        display: none !important;
     }
     
     section.transport-cost-section .alert {
@@ -709,12 +906,42 @@ section.transport-cost-section .alert li {
     
     section.transport-cost-section .table-responsive {
         font-size: 0.8rem !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+    }
+    
+    section.transport-cost-section .table {
+        margin-bottom: 0 !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
     }
     
     section.transport-cost-section .table thead th,
     section.transport-cost-section .table tbody td {
-        padding: 0.5rem 0.25rem !important;
-        font-size: 0.8rem !important;
+        padding: 0.75rem 0.5rem !important;
+        font-size: 0.85rem !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
+    }
+    
+    /* 手機版表格特殊處理 */
+    section.transport-cost-section .table thead th:first-child,
+    section.transport-cost-section .table tbody td:first-child {
+        min-width: 80px !important;
+        max-width: 100px !important;
+    }
+    
+    section.transport-cost-section .table thead th:nth-child(2),
+    section.transport-cost-section .table tbody td:nth-child(2) {
+        min-width: 70px !important;
+        max-width: 90px !important;
+    }
+    
+    section.transport-cost-section .table thead th:last-child,
+    section.transport-cost-section .table tbody td:last-child {
+        min-width: 120px !important;
+        max-width: 140px !important;
     }
     
     section.transport-cost-section .alert {
@@ -724,5 +951,72 @@ section.transport-cost-section .alert li {
     .text-center .btn-outline-warning {
         padding: 0.6rem 1.2rem !important;
         font-size: 0.8rem !important;
+    }
+}
+
+/* 超小螢幕 (≤480px) - 進一步優化表格 */
+@media (max-width: 480px) {
+    section.transport-cost-section .transport-cost-card .card-body {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    section.transport-cost-section .table thead th,
+    section.transport-cost-section .table tbody td {
+        padding: 0.6rem 0.4rem !important;
+        font-size: 0.8rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* 更緊湊的欄位寬度 */
+    section.transport-cost-section .table thead th:first-child,
+    section.transport-cost-section .table tbody td:first-child {
+        min-width: 70px !important;
+        max-width: 85px !important;
+    }
+    
+    section.transport-cost-section .table thead th:nth-child(2),
+    section.transport-cost-section .table tbody td:nth-child(2) {
+        min-width: 60px !important;
+        max-width: 75px !important;
+    }
+    
+    section.transport-cost-section .table thead th:last-child,
+    section.transport-cost-section .table tbody td:last-child {
+        min-width: 100px !important;
+        max-width: 120px !important;
+    }
+    
+    /* 手機版表格文字換行優化 */
+    section.transport-cost-section .table tbody td br.d-md-none {
+        display: block !important;
+    }
+    
+    section.transport-cost-section .table tbody td .d-md-none {
+        display: block !important;
+        margin-top: 0.2rem !important;
+    }
+    
+    section.transport-cost-section .table tbody td .d-none.d-md-inline {
+        display: none !important;
+    }
+    
+    /* 調整警告框在超小螢幕的顯示 */
+    section.transport-cost-section .alert {
+        padding: 0.6rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    section.transport-cost-section .alert ul {
+        padding-left: 0.8rem !important;
+    }
+    
+    section.transport-cost-section .alert li {
+        margin-bottom: 0.2rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .text-center .btn-outline-warning {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
     }
 } 
