@@ -318,7 +318,7 @@ body.menu-open {
 
 /* 關閉按鈕懸停效果 */
 .menu-close-btn:hover {
-    background: rgba(0, 0, 0, 0.1); /* 懸停時半透明背景 */
+    background: transparent; /* 懸停時半透明背景 */
     border-radius: 50%;     /* 圓形背景 */
 }
 
@@ -802,7 +802,7 @@ body.menu-open {
         width: 40px;        /* 按鈕寬度 */
         height: 40px;       /* 按鈕高度 */
         border: none;       /* 移除邊框 */
-        background: rgba(0, 0, 0, 0.1); /* 半透明背景 */
+        background: transparent; /* 半透明背景 */
         border-radius: 50%; /* 圓形背景 */
         cursor: pointer;    /* 滑鼠指標變為手型 */
         align-items: center; /* 垂直置中 */
@@ -812,7 +812,7 @@ body.menu-open {
     }
     
     .menu-close-btn:hover {
-        background: rgba(0, 0, 0, 0.2); /* 懸停時背景更明顯 */
+        background: transparent; /* 懸停時背景更明顯 */
         transform: scale(1.1); /* 懸停時放大 */
     }
     
