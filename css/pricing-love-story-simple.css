@@ -12,6 +12,49 @@
     --shadow-medium: rgba(0, 0, 0, 0.15);
 }
 
+/* ===== Love Story 區塊內文字體大小設定 ===== */
+/* Large Desktop (≥1200px) */
+@media (min-width: 1200px) {
+    .about-story .story-text p {
+        font-size: 1.1rem !important; /* 約 17.6px */
+    }
+}
+
+/* Desktop (992px-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about-story .story-text p {
+        font-size: 1.1rem !important; /* 約 17.6px */
+    }
+}
+
+/* Tablet (768px-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .about-story .story-text p {
+        font-size: 1rem !important; /* 約 16px */
+    }
+}
+
+/* Mobile Large (576px-767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .about-story .story-text p {
+        font-size: 0.9rem !important; /* 約 14.4px */
+    }
+}
+
+/* Mobile Small (≤575px) */
+@media (max-width: 575px) {
+    .about-story .story-text p {
+        font-size: 0.85rem !important; /* 約 13.6px */
+    }
+}
+
+/* Extra Small Mobile (≤399px) */
+@media (max-width: 399px) {
+    .about-story .story-text p {
+        font-size: 0.85rem !important; /* 約 13.6px */
+    }
+}
+
 /* ===== 統一按鈕樣式 ===== */
 /* 所有預約諮詢按鈕的統一樣式 */
 .text-center .btn-outline-warning {
