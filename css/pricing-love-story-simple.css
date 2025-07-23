@@ -104,6 +104,32 @@ section.pricing-section .pricing-card .card {
     transition: all 0.3s ease !important;
 }
 
+/* 特色卡片樣式 - 品牌色外框 */
+section.pricing-section .pricing-card .featured-card {
+    border: 3px solid var(--primary-color) !important;
+    box-shadow: 0 8px 25px rgba(247, 188, 81, 0.2) !important;
+    position: relative !important;
+}
+
+section.pricing-section .pricing-card .featured-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color)) !important;
+    border-radius: 17px !important;
+    z-index: -1 !important;
+    opacity: 0.8 !important;
+    transition: all 0.3s ease !important;
+}
+
+section.pricing-section .pricing-card:hover .featured-card::before {
+    opacity: 1 !important;
+    transform: scale(1.02) !important;
+}
+
 section.pricing-section .pricing-card:hover .card {
     box-shadow: 0 15px 35px var(--shadow-medium) !important;
 }
@@ -118,14 +144,29 @@ section.pricing-section .pricing-card .card-title {
     color: var(--text-dark) !important;
     font-weight: 600 !important;
     font-size: 1.1rem !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.5rem !important; /* 縮小標題與原價的間距 */
+    line-height: 1.4 !important;
+    min-height: 80px !important; /* 確保所有卡片標題區域高度一致 */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+/* 統一標籤與標題間距 */
+section.pricing-section .pricing-card .card-title .badge {
+    margin-bottom: 0.8rem !important; /* 統一標籤下方間距 */
+    margin-top: 0 !important;
+    align-self: flex-start !important;
+}
+
+/* 標題文字樣式 */
+section.pricing-section .pricing-card .card-title br + * {
+    margin-top: 0 !important;
     line-height: 1.4 !important;
 }
 
 /* 標題中的徽章樣式 */
 section.pricing-section .pricing-card .card-title .badge {
-    margin-top: 0.8rem !important;
-    margin-bottom: 0.1rem !important;
     display: inline-block !important;
     font-size: 0.7rem !important;
     padding: 0.4rem 0.6rem !important;
@@ -401,11 +442,13 @@ section.pricing-section .pricing-card ul li i.me-2 {
     
     section.pricing-section .pricing-card .card-title {
         font-size: 1.2rem !important;
+        min-height: 90px !important;
+        margin-bottom: 0.6rem !important; /* 大螢幕下的間距 */
     }
     
     section.pricing-section .pricing-card .card-title .badge {
-        margin-top: 0.9rem !important;
-        margin-bottom: 0.15rem !important;
+        margin-bottom: 1rem !important;
+        margin-top: 0 !important;
         font-size: 0.75rem !important;
         padding: 0.5rem 0.7rem !important;
     }
@@ -448,13 +491,15 @@ section.pricing-section .pricing-card ul li i.me-2 {
         padding: 1.25rem !important;
     }
     
-    section.pricing-section .pricing-card .card-title {
+    section.pricing-section .card-title {
         font-size: 1rem !important;
+        min-height: 75px !important;
+        margin-bottom: 0.4rem !important; /* 中等螢幕下的間距 */
     }
     
     section.pricing-section .pricing-card .card-title .badge {
-        margin-top: 0.7rem !important;
-        margin-bottom: 0.1rem !important;
+        margin-bottom: 0.8rem !important;
+        margin-top: 0 !important;
         font-size: 0.65rem !important;
         padding: 0.3rem 0.5rem !important;
     }
@@ -507,11 +552,13 @@ section.pricing-section .pricing-card ul li i.me-2 {
     section.pricing-section .pricing-card .card-title {
         font-size: 1rem !important;
         line-height: 1.3 !important;
+        min-height: 70px !important;
+        margin-bottom: 0.3rem !important; /* 手機版下的間距 */
     }
     
     section.pricing-section .pricing-card .card-title .badge {
-        margin-top: 0.6rem !important;
-        margin-bottom: 0.05rem !important;
+        margin-bottom: 0.6rem !important;
+        margin-top: 0 !important;
         font-size: 0.6rem !important;
         padding: 0.25rem 0.4rem !important;
         display: inline-block !important;
